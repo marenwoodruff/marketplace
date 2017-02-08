@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listings</h1>
+<h1 class="center margin-bottom">Listings</h1>
 
 <div class="row">
   <% @listings.each do |listing| %>
-    <div class="col-md-3">
+    <div class="col-xs-8 col-sm-4 col-md-3">
       <div class="thumbnail">
         <%= image_tag listing.image.url(:medium) %><br />
-        <div class="caption">
+        <div class="caption center">
           <h3><%= listing.name %></h3>
           <p><%= number_to_currency(listing.price) %></p>
-          <%= link_to 'Show', listing, class: "btn btn-link" %>
-          <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %>
+          <%= link_to 'Show', listing, class: "btn btn-link" %> | 
+          <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %> |
           <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
         </div>
       </div>
@@ -21,4 +21,6 @@
 
 <br>
 
-<%= link_to 'New Listing', new_listing_path %>
+<div class="col-md-12">
+  <%= link_to 'Add a New Listing', new_listing_path, class: "btn btn-default center" %>
+</div>

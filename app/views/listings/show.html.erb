@@ -7,10 +7,7 @@
         </div>
     </div>
     <div class="col-md-6">
-        <p>
-          <strong>Name:</strong>
-          <%= @listing.name %>
-        </p>
+        <h1 class="margin-bottom"><%= @listing.name %></h1>
 
         <p>
           <strong>Description:</strong>
@@ -22,7 +19,7 @@
           <%= number_to_currency(@listing.price) %>
         </p>
 
-        <p>
+        <p class="margin-top">
             <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
             <%= link_to 'Back', listings_path, class: "btn btn-link" %>
         </p>
